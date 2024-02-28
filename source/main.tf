@@ -5,13 +5,16 @@ provider "aws" {
 resource "aws_vpc" "CVPC" {
     cidr_block = var.vpc_cidr
     tags = {
-      Name = ""
+      Name = var.vpc_name
     }
   
 }
 
 resource "aws_internet_gateway" "IG" {
     vpc_id = aws_vpc.CVPC.id
+    tags = {
+      Name = var.IG_name
+    }
   
 }
 
@@ -84,7 +87,7 @@ resource "aws_instance" "My-instance" {
     subnet_id = aws_subnet.PSub.id
     security_groups = [aws_security_group.sec_gp.id]
     tags = {
-      Name = ""
+      Name = var.ec2_name
     }
 
     /*

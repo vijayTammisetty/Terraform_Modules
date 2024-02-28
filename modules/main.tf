@@ -1,5 +1,6 @@
 module "Apple" {
-    source = "../source"
+    # source = "../source"
+    source = "github.com/vijayTammisetty/Terraform_Modules/source"
     vpc_cidr = "10.0.0.0/16"
     sub_cidr = "10.0.0.0/25"
     map_public_ip_on_launch = true
@@ -12,6 +13,7 @@ module "Apple" {
     ec2_name = "apple"
     ami_id = "ami-0440d3b780d96b29d"
     instance_type = "t2.micro"
+    
 
     # instance connection
     #ssh_user = "ec2-user"

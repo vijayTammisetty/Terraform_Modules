@@ -1,9 +1,19 @@
 #  Custom vpc name
+variable "vpc_name" {
+    type = string
+    default = ""
+  
+}
 
 # vpc cidr block
 variable "vpc_cidr" {
   type = string
   default = ""
+}
+variable "IG_name" {
+    type = string
+    default = ""
+  
 }
 
 # subnet cidr block
